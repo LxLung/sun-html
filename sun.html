@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="sun.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Sunjay Template Page</title>
+    </head> 
+    <body>
+        <!-- NOTE: Top Header Bar -->
+        <!-- Blue Purple: #3f51b5 -->
+        <header>
+            <button id="toggleButton" style="background-color: #2d3a82; border: none; color: white;
+            padding: 1em 1em; text-align: center; text-decoration: none;
+            display: inline-block; font-size: 1em;" onclick="toggleAside()">
+                &gt;
+            </button>
+            <a href="../index.html" style="color: white;">Home</a>
+        </header>
+        <div class="content-wrapper" id="contentWrapper">
+            <!-- NOTE: LEFT CONTENT -->
+            <aside class="sidebar" style="width: 300px;">
+                <div class="sidebar-drag-handle"></div>
+                <div class="navbar">
+                    <a class="navbar-button" href="">&lt;Previous</a>
+                    <button id="toc-button" class="navbar-button" onclick="toggleTOC()">
+                        <i class="fa fa-bars">&nbsp;</i>
+                        Table of Contents
+                    </button>
+                    <a class="navbar-button" href="">Next&gt;</a>
+                </div>
+                <nav class="toc ToggleTOC">
+                <ol>
+                    <li>Introduction</li>
+                </ol>
+                </nav>
+                <article>
+                    <h1>Header</h1>
+                    <p>
+                <!-- NOTE: This is the main text. -->
+                        Hello, World
+                    </p>
+                </article>
+            </aside>
+
+            <!-- NOTE: Tab selector -->
+            <!-- targetNames should match file-tree & content -->
+            <main>
+                <ul class="tab-selector">
+                    <li class="selected" TargetName="File-Tree">
+                        <i class="fa fa-folder"></i>
+                    </li>
+                    <li class="" targetName="Tab 1">
+                        Tab 1
+                        <button class="close"><i class="fa fa-times"></i></button>
+                    </li>
+                    <li class="" targetName="Tab 2">
+                        Tab 2
+                        <button class="close"><i class="fa fa-times"></i></button>
+                    </li>
+                    <li class="" targetName="Tab 3">
+                        Tab 3
+                        <button class="close"><i class="fa fa-times"></i></button>
+                    </li>
+                    <li class="" targetName="Tab 4">
+                        Tab 4
+                        <button class="close"><i class="fa fa-times"></i></button>
+                    </li>
+                    <li class="" targetName="Tab 5">
+                        Tab 5
+                        <button class="close"><i class="fa fa-times"></i></button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                <!-- NOTE: FileTree is special:it never closes-->
+                    <section class="selected" targetName="File-Tree">
+                    <ul class="file-tree">
+                        <!-- fa-photo fa-file-text fa-folder -->
+                        <li>
+                            <i class="fa fa-folder" aria-hidden="true"></i>
+                            assets
+                            <ul>
+                                <li TargetName="Tab 1">
+                                    <i class="fa fa-photo" aria-hidden="true"></i>
+                                    img.png
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="" TargetName="Tab 2">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                            tab2.md
+                        </li>
+                        <li TargetName="Tab 3">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                            tab3.md
+                        </li>
+                        <li TargetName="Tab 4">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                            tab4.md
+                        </li>
+                        <li TargetName="Tab 5">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                            tab5.md
+                        </li>
+                    </ul>
+                    </section>
+<!-- NOTE: Tab Content: Paste Generated Code Content Here! -->
+                    <section class="" targetName="Tab 1">
+<pre>
+<code>Line 1 of code</code>
+<code>Line 2 of code</code>
+<code>Line 3 of code</code></pre>
+                    </section>
+                    <section class="" targetName="Tab 2">
+                    Tab 2
+                    </section>
+                    <section class="" targetName="Tab 3">
+                    Tab 3
+                    </section>
+                    <section class="" targetName="Tab 4">
+                    Tab 4
+                    </section>
+                    <section class="" targetName="Tab 5">
+                    Tab 5
+                    </section>
+                </div">
+            </main>
+        </div>
+      <script src="sun.js"></script>
+    </body>
+</html>
+

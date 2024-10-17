@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    tab-size: 4 !important;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 100%;
+    marker: none;
+}
+
+header {
+    background-color: #3f51b5;
+    min-height: 3em;
+}
+
+.content-wrapper {
+    display: flex;
+    margin: 0;
+    height: calc(100vh - 3em);
+}
+
+aside {
+    background-color: white;
+    padding: 0px;
+    width: 40%;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #1e1e1e;
+    width: 60%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.collapsed aside {
+    display: none;
+}
+
+.collapsed main {
+    width: 100%;
+}
+
+article {
+    background: #fff;
+    height: 100%;
+    opacity: 1;
+    overflow-y: auto;
+    padding: 30px;
+    transition-delay: 0s,-.1s,-.1s;
+    transition-duration: .2s,.025s,0s;
+    transition-property: height,padding,opacity;
+}
+
+article h1 {
+    font-weight: 600;
+    padding-bottom: 0.3em;
+    font-size: 1.5em;
+    margin-top: 0 !important;
+    border-bottom: 1px solid #eaecef;
+    margin-bottom:0;
+}
+
+article.ToggleTOC {
+    height: 0%;
+    padding: 0px;
+    opacity: 0;
+    transition-delay: 0s,.1s,.1s;
+}
+
+.sidebar {
+    border-right: 1px solid #9e9e9e;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-shrink: 0;
+    min-width: 300px;
+    max-width: 805px;
+}
+
+.sidebar-drag-handle {
+    user-select: none;
+    bottom: 0;
+    cursor: ew-resize;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    width: 3px;
+    z-index: 10;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.navbar-button:hover {
+    background: #c7c7c7;
+}
+
+.navbar-button {
+    cursor: pointer;
+    background: #e0e0e0;
+    align-items: center;
+    background: #e0e0e0;
+    border: 1px solid #9e9e9e;
+    color: #424242;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+    outline: none;
+}
+
+.navbar-button.active {
+    background-color: #fff;
+    border-bottom: 0;
+}
+
+.toc {
+    background: #fff;
+    height: 100%;
+    opacity: 1;
+    overflow-y: auto;
+    padding: 30px;
+    transition-delay: 0s,-.1s,-.1s;
+    transition-duration: .2s,.025s,0s;
+    transition-property: height,padding,opacity;
+}
+
+.toc.ToggleTOC {
+    height: 0%;
+    opacity: 0;
+    padding: 0px;
+    transition-delay: 0s,.1s,.1s;
+}
+
+.tab-selector {
+    background: #272727;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0;
+    line-height: 1.5;
+    border-top: 1px solid black;
+}
+
+.tab-selector li {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    border: 1px solid black;
+    border-left-width: 0;
+    border-top-width: 0;
+    color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    padding: 5px 40px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tab-selector li .fa {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tab-selector li.selected .fa {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.tab-selector li.selected {
+    background: #1e1e1e;
+    border-bottom: 0;
+    color: #fff;
+}
+.close {
+    display: none;
+    background: none;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    top: 5px;
+}
+
+.tab-selector li:hover .close {
+    display: inline-block;
+    background: none;
+    color: white;
+    border: none;
+}
+.tab-content * {
+    color: #d4d4d4;
+    font-family: monaco;
+    list-style-type: none;
+    marker: none;
+    cursor: default;
+    line-height: 1.5;
+}
+
+.tab-content section:not(.selected) {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.fa.fa-times:hover {
+    background: #313232;
+    color: white;
+    cursor: pointer;
+}
+
+.file-tree {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px 30px;
+}
+
+.file-tree ul {
+    position: relative;
+    line-height: 2em;
+}
+
+.file-tree li > ul{
+    padding-left: 1.5em;
+}
+
+.file-tree li > ul:before {
+    border-left: 1px solid #fff;
+    bottom: .5em;
+    content: '';
+    left: .5em;
+    position: absolute;
+    top: 0;
+}
+
+pre {
+    counter-reset: listing;
+}
+
+pre code {
+    counter-increment: listing;
+}
+
+pre code.selected {
+    background: rgba(96,125,139,0.2);
+}
+
+pre code:before {
+    content: counter(listing);
+    color: gray;
+    border-right: 1px solid transparent;
+    float: left;
+    margin-right: .5em;
+    min-width: 3.5em;
+    padding-right: .5em;
+    text-align: right;
+}
